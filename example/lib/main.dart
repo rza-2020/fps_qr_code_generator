@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     final emv = EMV(
-      fps_id: '1234567890',
+      fpsId: '1234567890',
       mcc: '0000',
       currency: '344',
       amount: '123456789012345',

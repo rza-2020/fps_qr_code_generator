@@ -1,9 +1,9 @@
 class EMV {
   /// This is the Faster Payment System ID, which is a unique identifier for the merchant or individual receiving the payment. It's typically a number assigned by the bank or payment service provider.
-  final String? fps_id;
+  final String? fpsId;
 
   /// This is the code identifying the bank associated with the account. In Hong Kong, each bank has a unique code.
-  final String? bank_code;
+  final String? bankCode;
 
   /// This field is for the mobile phone number associated with the account, if applicable. It's used when the account is linked to a phone number for receiving payments.
   final String? mobile;
@@ -30,8 +30,8 @@ class EMV {
   final String? account;
 
   EMV({
-    this.fps_id,
-    this.bank_code,
+    this.fpsId,
+    this.bankCode,
     this.mobile,
     this.email,
     this.mcc,
