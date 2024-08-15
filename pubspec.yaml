@@ -1,7 +1,7 @@
 name: fps_qr_code_generator
 description: "fps qr code generator"
-version: 0.0.1
-homepage:
+
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.4.3 <4.0.0'
@@ -42,8 +42,8 @@ flutter:
         pluginClass: FpsQrCodeGeneratorPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - images/
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

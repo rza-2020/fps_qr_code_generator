@@ -49,13 +49,14 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    EMV emv = EMV()
-      ..fps_id = '1234567890'
-      ..mcc = '0000'
-      ..currency = '344'
-      ..amount = '888.88'
-      ..account = '02'
-      ..reference = '8999888999';
+    final emv = EMV(
+      fps_id: '1234567890',
+      mcc: '0000',
+      currency: '344',
+      amount: '123456789012345',
+      account: '02',
+      reference: '8999888999',
+    );
 
     return MaterialApp(
       home: Scaffold(
@@ -68,7 +69,16 @@ class _MyAppState extends State<MyApp> {
               Text('Running on: $_platformVersion\n'),
               Text(
                   'QR Code: ${_fpsQrCodeGeneratorPlugin.generateQrCodeString(emv)}'),
-              _fpsQrCodeGeneratorPlugin.generateQrCodeImage(emv),
+              _fpsQrCodeGeneratorPlugin.generateQrCodeImage(
+                size: 300,
+                isShowFPSLogo: true,
+                emv: emv,
+                eyeStyle: const QrEyeStyle(
+                  eyeShape: QrEyeShape.square,
+                  color: Colors.black,
+                ),
+                // embeddedImage: const AssetImage('images/fps-icon.png'),
+              ),
             ],
           ),
         ),
