@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/fps_qr_code_generator.iml" filepath="$PROJECT_DIR$/fps_qr_code_generator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/fps_qr_code_generator_android.iml" filepath="$PROJECT_DIR$/android/fps_qr_code_generator_android.iml" />
     </modules>
   </component>
 </project>

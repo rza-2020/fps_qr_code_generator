@@ -69,7 +69,7 @@ class _MyAppState extends State<MyApp> {
               Text('Running on: $_platformVersion\n'),
               Text(
                   'QR Code: ${_fpsQrCodeGeneratorPlugin.generateQrCodeString(emv)}'),
-              _fpsQrCodeGeneratorPlugin.generateQrCodeImage(
+              _fpsQrCodeGeneratorPlugin.generateQrCodeImageWidget(
                 size: 300,
                 isShowFPSLogo: true,
                 emv: emv,

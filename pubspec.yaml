@@ -1,7 +1,7 @@
 name: fps_qr_code_generator
-description: "FPS QR Code Generator plugin for flutter.\nThe Faster Payment System (FPS) is a payment financial infrastructure introduced in 2018 by the Hong Kong Monetary Authority (HKMA) and operated by Hong Kong Interbank Clearing Limited (HKICL). "
+description: "The Faster Payment System (FPS) - FPS QR Code Generator plugin for flutter."
 
-version: 1.0.1+2
+version: 1.0.3
 
 homepage: https://github.com/rza-2020/fps_qr_code_generator
 
@@ -14,6 +14,7 @@ dependencies:
     sdk: flutter
   qr_flutter: ^4.1.0
   plugin_platform_interface: ^2.0.2
+  animated_loading_border: ^0.0.2
 
 dev_dependencies:
   flutter_test:

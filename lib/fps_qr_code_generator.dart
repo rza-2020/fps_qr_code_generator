@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fps_qr_code_generator/src/generator.dart';
+import 'package:fps_qr_code_generator/src/widget/qr_code_widget.dart';
 
 import 'fps_qr_code_generator.dart';
 import 'fps_qr_code_generator_platform_interface.dart';
@@ -12,37 +13,34 @@ class FpsQrCodeGenerator {
     return FpsQrCodeGeneratorPlatform.instance.getPlatformVersion();
   }
 
-  String generateQrCodeString(EMV emv) {
+  Future<String> generateQrCodeString(EMV emv) async {
     Generator generator = Generator();
     String qrCodeString = generator.generate(emv);
     return qrCodeString;
   }
 
-  Widget generateQrCodeImage(
-      {required EMV emv,
+  Widget generateQrCodeImageWidget(
+      {String? qrCodeString,
+      EMV? emv,
       double size = 220,
       QrEyeStyle? eyeStyle,
       bool isShowFPSLogo = false,
       Color backgroundColor = Colors.transparent,
       Color? foregroundColor,
-      bool gapless = false,
+      bool gapLess = false,
       ImageProvider<Object>? embeddedImage,
       QrEmbeddedImageStyle? embeddedImageStyle}) {
-    String qrCodeString = generateQrCodeString(emv);
-    return QrImageView(
+    return QrCodeWidget(
+      qrCodeString: qrCodeString,
+      emv: emv,
       size: size,
-      version: QrVersions.auto,
-      data: qrCodeString,
-      eyeStyle: eyeStyle ??
-          const QrEyeStyle(eyeShape: QrEyeShape.square, color: Colors.black),
-      embeddedImage: isShowFPSLogo
-          ? const AssetImage('packages/fps_qr_code_generator/images/fps.png')
-          : embeddedImage,
-      embeddedImageStyle: embeddedImageStyle ??
-          QrEmbeddedImageStyle(
-            size: Size(size * 0.136, size * 0.136),
-          ),
-      gapless: gapless,
+      eyeStyle: eyeStyle,
+      isShowFPSLogo: isShowFPSLogo,
+      backgroundColor: backgroundColor,
+      foregroundColor: foregroundColor,
+      gapLess: gapLess,
+      embeddedImage: embeddedImage,
+      embeddedImageStyle: embeddedImageStyle,
     );
   }
 }
